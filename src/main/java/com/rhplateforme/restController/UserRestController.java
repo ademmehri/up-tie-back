@@ -33,7 +33,7 @@ import io.micrometer.common.util.StringUtils;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins = "https://www.tie-job.com")
+@CrossOrigin(origins = "https://tie-job.com")
 public class UserRestController {
 	@Autowired
 	UserService userService;
