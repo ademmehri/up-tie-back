@@ -77,7 +77,7 @@ public class SecurityConfig {
 		                        .requestMatchers("/login").permitAll()
 		                        .requestMatchers("/auth/exists/**").permitAll()
 		                        .requestMatchers("/auth/getuserbyemail/*").permitAll()
-		                        .requestMatchers("/auth/verifieremail/**").permitAll()
+		                        .requestMatchers("/auth/verifieremail").permitAll()
 		                        .requestMatchers("/auth/addUser").permitAll()
 		                        .requestMatchers("/auth/addUserentr").permitAll()
 		                        .requestMatchers("/auth/addimage/*").permitAll()
