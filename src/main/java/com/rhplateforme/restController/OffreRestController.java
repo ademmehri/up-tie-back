@@ -22,7 +22,7 @@ import com.rhplateforme.service.OffreService;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins = "https://www.tie-job.com")
+@CrossOrigin(origins = "https://tie-job.com")
 public class OffreRestController {
 @Autowired
 OffreService offreserv;

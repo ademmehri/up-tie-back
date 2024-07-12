@@ -27,7 +27,7 @@ import jakarta.servlet.http.HttpServletRequest;
 
 @Configuration
 @EnableWebSecurity
-@CrossOrigin(origins = "https://www.tie-job.com")
+@CrossOrigin(origins = "https://tie-job.com")
 public class SecurityConfig {
 	
 	@Autowired
@@ -64,7 +64,7 @@ public class SecurityConfig {
 		    	request) {
 		    	 CorsConfiguration config = new CorsConfiguration();
 
-		    	config.setAllowedOrigins(Collections.singletonList("https://www.tie-job.com"));
+		    	config.setAllowedOrigins(Collections.singletonList("https://tie-job.com"));
 		    	 config.setAllowedMethods(Collections.singletonList("*"));
 		    	 config.setAllowCredentials(true);
 		    	 config.setAllowedHeaders(Collections.singletonList("*"));
