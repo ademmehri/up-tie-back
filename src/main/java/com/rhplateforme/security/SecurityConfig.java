@@ -65,7 +65,7 @@ public class SecurityConfig {
 		    	request) {
 		    	 CorsConfiguration config = new CorsConfiguration();
 
-		    	config.setAllowedOrigins(Collections.singletonList("https://www.tie-job.com"));
+		    	config.setAllowedOrigins(Collections.singletonList("*"));
 		    	 config.setAllowedMethods(Collections.singletonList("*"));
 		    	 config.setAllowCredentials(true);
 		    	 config.setAllowedHeaders(Collections.singletonList("*"));
