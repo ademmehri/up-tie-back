@@ -19,6 +19,7 @@ import com.rhplateforme.Repos.UserRepository;
 import com.rhplateforme.entities.Employee;
 import com.rhplateforme.entities.File;
 
+
 import jakarta.mail.Multipart;
 
 @Service 
@@ -29,29 +30,25 @@ UserRepository userrep;
 FileRepository filerep;
 	@Override
 	public File addimage(MultipartFile f,Long id) throws IOException {
-		Employee emp=userrep.findById(id).get();
-		File fl=new File(f.getOriginalFilename(),f.getContentType(),compressBytes(f.getContentType().getBytes()));
-		fl.setNomfichier("image");
-		String path="//home//moj26//aa//upppp//dist//projetangular//assets";
-		Path pt=Paths.get(path+"/"+f.getOriginalFilename());
-		Files.copy(f.getInputStream(), pt,StandardCopyOption.REPLACE_EXISTING);
-		fl.setEmp(emp);
-		return filerep.save(fl);
+		Employee us=userrep.findById(id).get();
+		File image=File.builder().titlefile(f.getOriginalFilename()).typefile(f.getContentType())
+				.taillefile(f.getBytes()).build();
+		image.setNomfichier("image");
+		image.setEmp(us);
+		return filerep.save(image);
 	}
 	@Override
 	public File addCV(MultipartFile f, Long id) throws IOException {
-		Employee emp=userrep.findById(id).get();
-		File fl=new File(f.getOriginalFilename(),f.getContentType(),compressBytes(f.getContentType().getBytes()));
-		fl.setNomfichier("cv");
-		String path="//home//moj26//aa//upppp//dist//projetangular//assets";
-		Path pt=Paths.get(path+"/"+f.getOriginalFilename());
-		Files.copy(f.getInputStream(), pt,StandardCopyOption.REPLACE_EXISTING);
-		fl.setEmp(emp);
-		return filerep.save(fl);
+		Employee us=userrep.findById(id).get();
+		File image=File.builder().titlefile(f.getOriginalFilename()).typefile(f.getContentType())
+				.taillefile(f.getBytes()).build();
+		image.setNomfichier("cv");
+		image.setEmp(us);
+		return filerep.save(image);
 	}
 
 	
-	   public static byte[] compressBytes(byte[] data) {
+	  /* public static byte[] compressBytes(byte[] data) {
 	        Deflater deflater = new Deflater();
 	        deflater.setInput(data);
 	        deflater.finish();
@@ -83,18 +80,16 @@ FileRepository filerep;
 	    	} catch (DataFormatException e) {
 	    	}
 	    	return outputStream.toByteArray();
-	    	}
+	    	}*/
 		@Override
 		public File updatefile(MultipartFile file,Long id) throws IOException {
-			File fl= filerep.findById(id).get();
-    		File f=new File(file.getOriginalFilename(),file.getContentType(),compressBytes(file.getContentType().getBytes()));;
-        	String path="//home//moj26//aa//upppp//dist//projetangular//assets";
-    		Path pt=Paths.get(path+"/"+file.getOriginalFilename());
-    		Files.copy(file.getInputStream(), pt,StandardCopyOption.REPLACE_EXISTING);
-    		fl.setTaillefile(f.getTaillefile());
-        	fl.setTitlefile(f.getTitlefile());
-        	fl.setTypefile(f.getTypefile());
-        	return filerep.save(fl);
+			File f=filerep.findById(id).get();
+			File img=File.builder().titlefile(file.getOriginalFilename()).typefile(file.getContentType())
+						.taillefile(file.getBytes()).build();
+			f.setTaillefile(img.getTaillefile());
+			f.setTitlefile(img.getTitlefile());
+			f.setTypefile(img.getTypefile());
+				return filerep.save(f);
 		}
 		
 

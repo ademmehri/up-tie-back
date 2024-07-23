@@ -29,6 +29,7 @@ import jakarta.servlet.http.HttpServletRequest;
 @EnableWebSecurity
 
 @CrossOrigin(origins = "https://www.tie-job.com")
+//@CrossOrigin(origins = "http://localhost:4200")
 public class SecurityConfig {
 	
 	@Autowired

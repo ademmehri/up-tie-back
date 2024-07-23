@@ -365,24 +365,27 @@ public class UserServiceImpl implements UserService {
 	    	   List<Employee> employees = userRep.findAll();
 	    	   for (Employee employee : employees) {
 	               String metierEmployee = employee.getSpecialite();
-	                   if (metierEmployee.equals("Serveur")) {
-	                     nbs++;
-	                   }
-	                   if (metierEmployee.equals("Plongeur")) {
-	                       nbp++;
-	                     }
-	                   if (metierEmployee.equals("Barman")) {
-	                       nbB++;
-	                     }
-	                   if (metierEmployee.equals("Baggagiste")) {
-	                       nbb++;
-	                     }
-	                   if (metierEmployee.equals("Pizzaiolo")) {
-	                       nbi++;
-	                     }
-	                   if (metierEmployee.equals("Portier")) {
-	                       nbpor++;
-	                     }
+	               if(metierEmployee!=null) {
+	            	     if (metierEmployee.equals("Serveur")) {
+		                     nbs++;
+		                   }
+		                   if (metierEmployee.equals("Plongeur")) {
+		                       nbp++;
+		                     }
+		                   if (metierEmployee.equals("Barman")) {
+		                       nbB++;
+		                     }
+		                   if (metierEmployee.equals("Baggagiste")) {
+		                       nbb++;
+		                     }
+		                   if (metierEmployee.equals("Pizzaiolo")) {
+		                       nbi++;
+		                     }
+		                   if (metierEmployee.equals("Portier")) {
+		                       nbpor++;
+		                     }  
+	               }
+	              
 	                   
 	               }
 	    	     responseData.put("Serveur", nbs);

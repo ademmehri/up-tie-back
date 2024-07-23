@@ -19,6 +19,7 @@ import com.rhplateforme.service.FileService;
 @RestController
 @RequestMapping("/auth")
 @CrossOrigin(origins =  "https://www.tie-job.com")
+//@CrossOrigin(origins =  "http://localhost:4200")
 public class FileRestController {
 @Autowired
 FileService fileserv;
