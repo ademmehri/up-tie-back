@@ -29,13 +29,14 @@ UserRepository userrep;
 @Autowired
 FileRepository filerep;
 	@Override
-	public File addimage(MultipartFile f,Long id) throws IOException {
-		Employee us=userrep.findById(id).get();
-		File image=File.builder().titlefile(f.getOriginalFilename()).typefile(f.getContentType())
-				.taillefile(f.getBytes()).build();
-		image.setNomfichier("image");
-		image.setEmp(us);
-		return filerep.save(image);
+	public String addimage(MultipartFile f,Long id) throws IOException {
+		if(f!=null) {
+			String path="/var/www/html/uploads";
+			Path pt=Paths.get(path+"/"+f.getOriginalFilename());
+			Files.copy(f.getInputStream(), pt,StandardCopyOption.REPLACE_EXISTING);
+			return "ok";
+			}
+			return null;
 	}
 	@Override
 	public File addCV(MultipartFile f, Long id) throws IOException {
@@ -91,8 +92,12 @@ FileRepository filerep;
 			f.setTypefile(img.getTypefile());
 				return filerep.save(f);
 		}
+	
+	
 		
-
+	
+		
+		}
 	
 
-}
+

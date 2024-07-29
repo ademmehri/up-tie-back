@@ -21,10 +21,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-
 import com.rhplateforme.Repos.UserRepository;
 import com.rhplateforme.entities.*;
-
 import com.rhplateforme.mail.EmailSenderService;
 import com.rhplateforme.security.MyUserDetailsService;
 import com.rhplateforme.service.UserService;
@@ -84,7 +82,7 @@ public class UserRestController {
 	    r.setRole("ENTR");
 	    roles.add(r);
 	    user.setEnabled(true);
-	    emailserv.sendemailinscritemployeur(user.getEmail());
+	    //emailserv.sendemailinscritemployeur(user.getEmail());
 	    user.setRoles(roles);
 		
         return userService.saveUser(user);

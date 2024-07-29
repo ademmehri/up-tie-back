@@ -96,6 +96,7 @@ public class UserServiceImpl implements UserService {
 	        e.setCp(employee.getCp());
 	        e.setPack(employee.getPack());
 	        e.setDuree(employee.getDuree());
+	        e.setEtat(employee.getEtat());
 	        return userRep.save(e) ;
 	}
 

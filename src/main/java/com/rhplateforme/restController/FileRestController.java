@@ -24,7 +24,7 @@ public class FileRestController {
 @Autowired
 FileService fileserv;
 @PostMapping("/addimage/{id}")
-public File addimage(@RequestParam("file") MultipartFile file,@PathVariable Long id) throws IOException {
+public String addimage(@RequestParam("file") MultipartFile file,@PathVariable Long id) throws IOException {
     return fileserv.addimage(file,id);
 }
 
