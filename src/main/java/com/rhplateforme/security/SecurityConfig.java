@@ -82,7 +82,7 @@ public class SecurityConfig {
 		                        .requestMatchers("/auth/verifieremail").permitAll()
 		                        .requestMatchers("/auth/addUser").permitAll()
 		                        .requestMatchers("/auth/addUserentr").permitAll()
-		                        .requestMatchers("/auth/addimage/*").permitAll()
+		                        .requestMatchers("/auth/addimagee/*").permitAll()
 		                        .requestMatchers("/auth/addcv/*").permitAll()
 		                        .requestMatchers("/auth/updateuser").permitAll()
 		                        .requestMatchers("/auth/updatepack").hasAnyAuthority("ADMIN")

@@ -23,7 +23,7 @@ import com.rhplateforme.service.FileService;
 public class FileRestController {
 @Autowired
 FileService fileserv;
-@PostMapping("/addimage/{id}")
+@PostMapping("/addimagee/{id}")
 public String addimage(@RequestParam("file") MultipartFile file,@PathVariable Long id) throws IOException {
     return fileserv.addimage(file,id);
 }
